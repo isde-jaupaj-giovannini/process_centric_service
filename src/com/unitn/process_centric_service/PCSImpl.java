@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
  * Created by erinda on 1/24/16.
  */
 @WebService( endpointInterface = "com.unitn.process_centric_service.ProcessCentricService",
-        serviceName="Storage")
+        serviceName="PCService")
 public class PCSImpl  implements ProcessCentricService{
 
     @Override
@@ -25,7 +25,7 @@ public class PCSImpl  implements ProcessCentricService{
             HOSTNAME = "localhost";
         }
         String PORT = "6902";
-        String BASE_URL = "/ws/storage";
+        String BASE_URL = "/ws/pcservice";
 
         if (String.valueOf(System.getenv("PORT")) != "null") {
             PORT = String.valueOf(System.getenv("PORT"));
