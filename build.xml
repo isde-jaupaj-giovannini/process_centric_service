@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="pc_service" default="run" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
 
-    <property name="server.url" value="http://192.168.0.2:6903/ws/storage?wsdl" />
+    <property name="server.url.storage" value="http://192.168.0.2:6903/ws/storage?wsdl" />
+    <property name="server.url.blservice" value="http://192.168.0.2:6902/ws/blservice?wsdl" />
 
 
     <!-- PART 1: Ivy properties, download, installation and configuration -->
@@ -29,7 +30,8 @@
     <property name="build.dir" value="build"/>
     <property name="src.dir" value="src"/>
     <property name="lib.dir" value="libs"/>
-    <property name="src.gen.dir" value="src/com/unitn/storage_service"/>
+    <property name="src.gen.dir.storage" value="src/com/unitn/storage_service"/>
+    <property name="src.gen.dir.blservice" value="src/com/unitn/bl_service"/>
     <!-- =================================
           target: resolve downloads the dependencies to your lib folder
          ================================= -->
@@ -57,14 +59,18 @@
     <target name="clean">
         <echo message="Clean has been called"/>
         <delete dir="${build.dir}"/>
-        <delete dir="${src.gen.dir}" />
+        <delete dir="${src.gen.dir.storage}" />
+        <delete dir="${src.gen.dir.blservice}" />
         <echo message="${build.dir} has been deleted"/>
     </target>
 
 
     <target name="generate-client">
         <exec executable="${java.home}/../bin/wsimport">
-            <arg line="-d src -keep  ${server.url}"/>
+            <arg line="-d src -keep  ${server.url.storage}"/>
+        </exec>
+        <exec executable="${java.home}/../bin/wsimport">
+            <arg line="-d src -keep  ${server.url.blservice}"/>
         </exec>
     </target>
 
