@@ -24,7 +24,7 @@ public class PCSImpl  implements ProcessCentricService{
         if (HOSTNAME.equals("127.0.0.1")) {
             HOSTNAME = "localhost";
         }
-        String PORT = "6902";
+        String PORT = "6901";
         String BASE_URL = "/ws/pcservice";
 
         if (String.valueOf(System.getenv("PORT")) != "null") {
