@@ -1,5 +1,7 @@
 package com.unitn.process_centric_service;
 
+import com.unitn.local_database.UserData;
+
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -13,5 +15,15 @@ import javax.jws.soap.SOAPBinding;
 public interface ProcessCentricService {
     @WebMethod()
     @WebResult()
-    public String getDescription();
+    String getDescription();
+
+
+    @WebMethod
+    @WebResult
+    boolean userExists(int telegramId);
+
+    @WebMethod
+    @WebResult
+    boolean registerNewUser(UserData user);
+
 }

@@ -1,5 +1,11 @@
 package com.unitn.process_centric_service;
 
+import com.unitn.bl_service.BLService;
+import com.unitn.bl_service.BLService_Service;
+import com.unitn.local_database.UserData;
+import com.unitn.storage_service.Storage;
+import com.unitn.storage_service.StorageService;
+
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 import java.io.IOException;
@@ -13,9 +19,22 @@ import java.net.URISyntaxException;
         serviceName="PCService")
 public class PCSImpl  implements ProcessCentricService{
 
+    StorageService storage = new Storage().getStorageServiceImplPort();
+    BLService blService = new BLService_Service().getBLServiceImplPort();
+
     @Override
     public String getDescription() {
         return "THIS IS: " + ProcessCentricService.class.getSimpleName();
+    }
+
+    @Override
+    public boolean userExists(int telegramId) {
+        return storage.userExists(telegramId);
+    }
+
+    @Override
+    public boolean registerNewUser(UserData user) {
+        return blService.registerNewUser(user);
     }
 
     public static void main(String[] args) throws IllegalArgumentException, IOException, URISyntaxException {
