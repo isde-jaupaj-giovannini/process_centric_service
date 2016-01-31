@@ -1,6 +1,7 @@
 package com.unitn.process_centric_service;
 
 import com.unitn.local_database.UserData;
+import com.unitn.storage_service.Goal;
 
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
@@ -25,5 +26,10 @@ public interface ProcessCentricService {
     @WebMethod
     @WebResult
     boolean registerNewUser(UserData user);
+
+
+    @WebMethod
+    @WebResult
+    boolean saveGoal(int telegramId, Goal goal);
 
 }

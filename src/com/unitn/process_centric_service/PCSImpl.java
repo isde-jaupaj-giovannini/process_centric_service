@@ -3,6 +3,7 @@ package com.unitn.process_centric_service;
 import com.unitn.bl_service.BLService;
 import com.unitn.bl_service.BLService_Service;
 import com.unitn.local_database.UserData;
+import com.unitn.storage_service.Goal;
 import com.unitn.storage_service.Storage;
 import com.unitn.storage_service.StorageService;
 
@@ -35,6 +36,11 @@ public class PCSImpl  implements ProcessCentricService{
     @Override
     public boolean registerNewUser(UserData user) {
         return blService.registerNewUser(user);
+    }
+
+    @Override
+    public boolean saveGoal(int telegramId, Goal goal) {
+        return storage.saveGoal(telegramId, goal);
     }
 
     public static void main(String[] args) throws IllegalArgumentException, IOException, URISyntaxException {
