@@ -25,8 +25,11 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _RegisterNewUser_QNAME = new QName("http://bl_service.unitn.com/", "registerNewUser");
+    private final static QName _SaveNewStepsResponse_QNAME = new QName("http://bl_service.unitn.com/", "saveNewStepsResponse");
     private final static QName _GetDescriptionResponse_QNAME = new QName("http://bl_service.unitn.com/", "getDescriptionResponse");
     private final static QName _RegisterNewUserResponse_QNAME = new QName("http://bl_service.unitn.com/", "registerNewUserResponse");
+    private final static QName _NewStepResponse_QNAME = new QName("http://bl_service.unitn.com/", "newStepResponse");
+    private final static QName _SaveNewSteps_QNAME = new QName("http://bl_service.unitn.com/", "saveNewSteps");
     private final static QName _GetDescription_QNAME = new QName("http://bl_service.unitn.com/", "getDescription");
 
     /**
@@ -45,6 +48,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SaveNewStepsResponse }
+     * 
+     */
+    public SaveNewStepsResponse createSaveNewStepsResponse() {
+        return new SaveNewStepsResponse();
+    }
+
+    /**
      * Create an instance of {@link GetDescriptionResponse }
      * 
      */
@@ -53,11 +64,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NewStepResponse }
+     * 
+     */
+    public NewStepResponse createNewStepResponse() {
+        return new NewStepResponse();
+    }
+
+    /**
      * Create an instance of {@link RegisterNewUserResponse }
      * 
      */
     public RegisterNewUserResponse createRegisterNewUserResponse() {
         return new RegisterNewUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link SaveNewSteps }
+     * 
+     */
+    public SaveNewSteps createSaveNewSteps() {
+        return new SaveNewSteps();
     }
 
     /**
@@ -78,6 +105,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SaveNewStepsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "saveNewStepsResponse")
+    public JAXBElement<SaveNewStepsResponse> createSaveNewStepsResponse(SaveNewStepsResponse value) {
+        return new JAXBElement<SaveNewStepsResponse>(_SaveNewStepsResponse_QNAME, SaveNewStepsResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDescriptionResponse }{@code >}}
      * 
      */
@@ -93,6 +129,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "registerNewUserResponse")
     public JAXBElement<RegisterNewUserResponse> createRegisterNewUserResponse(RegisterNewUserResponse value) {
         return new JAXBElement<RegisterNewUserResponse>(_RegisterNewUserResponse_QNAME, RegisterNewUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NewStepResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "newStepResponse")
+    public JAXBElement<NewStepResponse> createNewStepResponse(NewStepResponse value) {
+        return new JAXBElement<NewStepResponse>(_NewStepResponse_QNAME, NewStepResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SaveNewSteps }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "saveNewSteps")
+    public JAXBElement<SaveNewSteps> createSaveNewSteps(SaveNewSteps value) {
+        return new JAXBElement<SaveNewSteps>(_SaveNewSteps_QNAME, SaveNewSteps.class, null, value);
     }
 
     /**

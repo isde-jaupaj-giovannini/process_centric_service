@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import com.unitn.local_database.MeasureData;
 import com.unitn.local_database.UserData;
 
 
@@ -25,6 +26,21 @@ import com.unitn.local_database.UserData;
 })
 public interface BLService {
 
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.unitn.bl_service.NewStepResponse
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "saveNewSteps", targetNamespace = "http://bl_service.unitn.com/", className = "com.unitn.bl_service.SaveNewSteps")
+    @ResponseWrapper(localName = "saveNewStepsResponse", targetNamespace = "http://bl_service.unitn.com/", className = "com.unitn.bl_service.SaveNewStepsResponse")
+    @Action(input = "http://bl_service.unitn.com/BLService/saveNewStepsRequest", output = "http://bl_service.unitn.com/BLService/saveNewStepsResponse")
+    public NewStepResponse saveNewSteps(
+        @WebParam(name = "arg0", targetNamespace = "")
+        MeasureData arg0);
 
     /**
      * 
