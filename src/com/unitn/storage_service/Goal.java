@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="content" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dueDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,7 +34,8 @@ import javax.xml.bind.annotation.XmlType;
     "checked",
     "content",
     "createdDate",
-    "dueDate"
+    "dueDate",
+    "id"
 })
 public class Goal {
 
@@ -41,6 +43,7 @@ public class Goal {
     protected String content;
     protected String createdDate;
     protected String dueDate;
+    protected long id;
 
     /**
      * Gets the value of the checked property.
@@ -136,6 +139,22 @@ public class Goal {
      */
     public void setDueDate(String value) {
         this.dueDate = value;
+    }
+
+    /**
+     * Gets the value of the id property.
+     * 
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
     }
 
 }
