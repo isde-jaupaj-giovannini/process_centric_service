@@ -27,11 +27,12 @@ public class ObjectFactory {
     private final static QName _RegisterNewUser_QNAME = new QName("http://bl_service.unitn.com/", "registerNewUser");
     private final static QName _SaveNewStepsResponse_QNAME = new QName("http://bl_service.unitn.com/", "saveNewStepsResponse");
     private final static QName _GetDescriptionResponse_QNAME = new QName("http://bl_service.unitn.com/", "getDescriptionResponse");
-    private final static QName _Stats_QNAME = new QName("http://bl_service.unitn.com/", "stats");
     private final static QName _RegisterNewUserResponse_QNAME = new QName("http://bl_service.unitn.com/", "registerNewUserResponse");
     private final static QName _NewStepResponse_QNAME = new QName("http://bl_service.unitn.com/", "newStepResponse");
     private final static QName _StatsResponse_QNAME = new QName("http://bl_service.unitn.com/", "statsResponse");
+    private final static QName _Statistics_QNAME = new QName("http://bl_service.unitn.com/", "statistics");
     private final static QName _SaveNewSteps_QNAME = new QName("http://bl_service.unitn.com/", "saveNewSteps");
+    private final static QName _StatisticsResponse_QNAME = new QName("http://bl_service.unitn.com/", "statisticsResponse");
     private final static QName _GetDescription_QNAME = new QName("http://bl_service.unitn.com/", "getDescription");
 
     /**
@@ -58,14 +59,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Stats }
-     * 
-     */
-    public Stats createStats() {
-        return new Stats();
-    }
-
-    /**
      * Create an instance of {@link GetDescriptionResponse }
      * 
      */
@@ -79,6 +72,14 @@ public class ObjectFactory {
      */
     public NewStepResponse createNewStepResponse() {
         return new NewStepResponse();
+    }
+
+    /**
+     * Create an instance of {@link StatsResponse }
+     * 
+     */
+    public StatsResponse createStatsResponse() {
+        return new StatsResponse();
     }
 
     /**
@@ -98,6 +99,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link StatisticsResponse }
+     * 
+     */
+    public StatisticsResponse createStatisticsResponse() {
+        return new StatisticsResponse();
+    }
+
+    /**
      * Create an instance of {@link GetDescription }
      * 
      */
@@ -106,11 +115,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StatsResponse }
+     * Create an instance of {@link Statistics }
      * 
      */
-    public StatsResponse createStatsResponse() {
-        return new StatsResponse();
+    public Statistics createStatistics() {
+        return new Statistics();
     }
 
     /**
@@ -141,15 +150,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stats }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "stats")
-    public JAXBElement<Stats> createStats(Stats value) {
-        return new JAXBElement<Stats>(_Stats_QNAME, Stats.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link RegisterNewUserResponse }{@code >}}
      * 
      */
@@ -168,12 +168,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatsResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "statsResponse")
-    public JAXBElement<Object> createStatsResponse(Object value) {
-        return new JAXBElement<Object>(_StatsResponse_QNAME, Object.class, null, value);
+    public JAXBElement<StatsResponse> createStatsResponse(StatsResponse value) {
+        return new JAXBElement<StatsResponse>(_StatsResponse_QNAME, StatsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Statistics }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "statistics")
+    public JAXBElement<Statistics> createStatistics(Statistics value) {
+        return new JAXBElement<Statistics>(_Statistics_QNAME, Statistics.class, null, value);
     }
 
     /**
@@ -183,6 +192,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "saveNewSteps")
     public JAXBElement<SaveNewSteps> createSaveNewSteps(SaveNewSteps value) {
         return new JAXBElement<SaveNewSteps>(_SaveNewSteps_QNAME, SaveNewSteps.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatisticsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://bl_service.unitn.com/", name = "statisticsResponse")
+    public JAXBElement<StatisticsResponse> createStatisticsResponse(StatisticsResponse value) {
+        return new JAXBElement<StatisticsResponse>(_StatisticsResponse_QNAME, StatisticsResponse.class, null, value);
     }
 
     /**

@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for stats complex type.
+ * <p>Java class for statistics complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="stats">
+ * &lt;complexType name="statistics">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "stats", propOrder = {
+@XmlType(name = "statistics", propOrder = {
     "arg0"
 })
-public class Stats {
+public class Statistics {
 
     protected int arg0;
 

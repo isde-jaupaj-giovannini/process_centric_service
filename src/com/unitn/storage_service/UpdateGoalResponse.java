@@ -1,22 +1,23 @@
 
-package com.unitn.bl_service;
+package com.unitn.storage_service;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for statsResponse complex type.
+ * <p>Java class for updateGoalResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="statsResponse">
+ * &lt;complexType name="updateGoalResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="chart" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://storage_service.unitn.com/}goal" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +27,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "statsResponse", propOrder = {
-    "chart"
+@XmlType(name = "updateGoalResponse", propOrder = {
+    "_return"
 })
-public class StatsResponse {
+public class UpdateGoalResponse {
 
-    protected String chart;
+    @XmlElement(name = "return")
+    protected Goal _return;
 
     /**
-     * Gets the value of the chart property.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Goal }
      *     
      */
-    public String getChart() {
-        return chart;
+    public Goal getReturn() {
+        return _return;
     }
 
     /**
-     * Sets the value of the chart property.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Goal }
      *     
      */
-    public void setChart(String value) {
-        this.chart = value;
+    public void setReturn(Goal value) {
+        this._return = value;
     }
 
 }
