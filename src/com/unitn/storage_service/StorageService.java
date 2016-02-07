@@ -56,10 +56,11 @@ public interface StorageService {
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        long arg1);
 
     /**
      * 
+     * @param arg2
      * @param arg1
      * @param arg0
      * @return
@@ -72,9 +73,11 @@ public interface StorageService {
     @Action(input = "http://storage_service.unitn.com/StorageService/getFromToStepsDataRequest", output = "http://storage_service.unitn.com/StorageService/getFromToStepsDataResponse")
     public Integer getFromToStepsData(
         @WebParam(name = "arg0", targetNamespace = "")
-        long arg0,
+        int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        long arg1);
+        long arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        long arg2);
 
     /**
      * 
@@ -198,5 +201,20 @@ public interface StorageService {
     @ResponseWrapper(localName = "getFamousQuoteResponse", targetNamespace = "http://storage_service.unitn.com/", className = "com.unitn.storage_service.GetFamousQuoteResponse")
     @Action(input = "http://storage_service.unitn.com/StorageService/getFamousQuoteRequest", output = "http://storage_service.unitn.com/StorageService/getFamousQuoteResponse")
     public Quote getFamousQuote();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.unitn.storage_service.Chart
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getChart", targetNamespace = "http://storage_service.unitn.com/", className = "com.unitn.storage_service.GetChart")
+    @ResponseWrapper(localName = "getChartResponse", targetNamespace = "http://storage_service.unitn.com/", className = "com.unitn.storage_service.GetChartResponse")
+    @Action(input = "http://storage_service.unitn.com/StorageService/getChartRequest", output = "http://storage_service.unitn.com/StorageService/getChartResponse")
+    public Chart getChart(
+        @WebParam(name = "arg0", targetNamespace = "")
+        List<Integer> arg0);
 
 }

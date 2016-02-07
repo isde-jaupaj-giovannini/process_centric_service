@@ -1,5 +1,5 @@
 
-package com.unitn.storage_service;
+package chart;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.unitn.storage_service package. 
+ * generated in the chart package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -23,18 +23,18 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.unitn.storage_service
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: chart
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Chart }
+     * Create an instance of {@link StatsResponse }
      * 
      */
-    public Chart createChart() {
-        return new Chart();
+    public StatsResponse createStatsResponse() {
+        return new StatsResponse();
     }
 
 }

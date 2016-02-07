@@ -5,6 +5,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
@@ -21,8 +22,10 @@ import com.unitn.local_database.UserData;
  */
 @WebService(name = "BLService", targetNamespace = "http://bl_service.unitn.com/")
 @XmlSeeAlso({
+    chart.ObjectFactory.class,
     com.unitn.bl_service.ObjectFactory.class,
-    com.unitn.local_database.ObjectFactory.class
+    com.unitn.local_database.ObjectFactory.class,
+    com.unitn.storage_service.ObjectFactory.class
 })
 public interface BLService {
 
@@ -68,5 +71,19 @@ public interface BLService {
     public boolean registerNewUser(
         @WebParam(name = "arg0", targetNamespace = "")
         UserData arg0);
+
+    /**
+     * 
+     * @param parameters
+     * @return
+     *     returns java.lang.Object
+     */
+    @WebMethod
+    @WebResult(name = "statsResponse", targetNamespace = "http://bl_service.unitn.com/", partName = "parameters")
+    @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
+    @Action(input = "http://bl_service.unitn.com/BLService/statsRequest", output = "http://bl_service.unitn.com/BLService/statsResponse")
+    public Object stats(
+        @WebParam(name = "stats", targetNamespace = "http://bl_service.unitn.com/", partName = "parameters")
+        Stats parameters);
 
 }
