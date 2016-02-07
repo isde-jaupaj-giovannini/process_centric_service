@@ -35,6 +35,7 @@ public class ObjectFactory {
     private final static QName _UserExistsResponse_QNAME = new QName("http://storage_service.unitn.com/", "userExistsResponse");
     private final static QName _UserExists_QNAME = new QName("http://storage_service.unitn.com/", "userExists");
     private final static QName _GetChartResponse_QNAME = new QName("http://storage_service.unitn.com/", "getChartResponse");
+    private final static QName _GetDoneGoalsResponse_QNAME = new QName("http://storage_service.unitn.com/", "getDoneGoalsResponse");
     private final static QName _SaveData_QNAME = new QName("http://storage_service.unitn.com/", "saveData");
     private final static QName _GetChart_QNAME = new QName("http://storage_service.unitn.com/", "getChart");
     private final static QName _UpdateGoal_QNAME = new QName("http://storage_service.unitn.com/", "updateGoal");
@@ -51,6 +52,7 @@ public class ObjectFactory {
     private final static QName _GetDescription_QNAME = new QName("http://storage_service.unitn.com/", "getDescription");
     private final static QName _GetLatestData_QNAME = new QName("http://storage_service.unitn.com/", "getLatestData");
     private final static QName _GetDescriptionResponse_QNAME = new QName("http://storage_service.unitn.com/", "getDescriptionResponse");
+    private final static QName _GetDoneGoals_QNAME = new QName("http://storage_service.unitn.com/", "getDoneGoals");
     private final static QName _GetUser_QNAME = new QName("http://storage_service.unitn.com/", "getUser");
     private final static QName _GetMovieQuoteResponse_QNAME = new QName("http://storage_service.unitn.com/", "getMovieQuoteResponse");
     private final static QName _SaveGoal_QNAME = new QName("http://storage_service.unitn.com/", "saveGoal");
@@ -93,6 +95,14 @@ public class ObjectFactory {
      */
     public GetDescriptionResponse createGetDescriptionResponse() {
         return new GetDescriptionResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetDoneGoals }
+     * 
+     */
+    public GetDoneGoals createGetDoneGoals() {
+        return new GetDoneGoals();
     }
 
     /**
@@ -229,6 +239,14 @@ public class ObjectFactory {
      */
     public GetChartResponse createGetChartResponse() {
         return new GetChartResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetDoneGoalsResponse }
+     * 
+     */
+    public GetDoneGoalsResponse createGetDoneGoalsResponse() {
+        return new GetDoneGoalsResponse();
     }
 
     /**
@@ -419,6 +437,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDoneGoalsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storage_service.unitn.com/", name = "getDoneGoalsResponse")
+    public JAXBElement<GetDoneGoalsResponse> createGetDoneGoalsResponse(GetDoneGoalsResponse value) {
+        return new JAXBElement<GetDoneGoalsResponse>(_GetDoneGoalsResponse_QNAME, GetDoneGoalsResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SaveData }{@code >}}
      * 
      */
@@ -560,6 +587,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://storage_service.unitn.com/", name = "getDescriptionResponse")
     public JAXBElement<GetDescriptionResponse> createGetDescriptionResponse(GetDescriptionResponse value) {
         return new JAXBElement<GetDescriptionResponse>(_GetDescriptionResponse_QNAME, GetDescriptionResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDoneGoals }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storage_service.unitn.com/", name = "getDoneGoals")
+    public JAXBElement<GetDoneGoals> createGetDoneGoals(GetDoneGoals value) {
+        return new JAXBElement<GetDoneGoals>(_GetDoneGoals_QNAME, GetDoneGoals.class, null, value);
     }
 
     /**
